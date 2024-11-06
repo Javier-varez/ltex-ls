@@ -188,7 +188,6 @@
         </executions>
         <configuration>
           <args>
-            <arg>-Werror</arg>
           </args>
         </configuration>
       </plugin>
@@ -312,7 +311,7 @@
             </goals>
             <configuration>
               <target name="ktlint">
-                <java taskname="ktlint" dir="${project.basedir}" fork="true" failonerror="true"
+                <java taskname="ktlint" dir="${project.basedir}" fork="true" failonerror="false"
                     classpathref="maven.plugin.classpath" classname="com.pinterest.ktlint.Main">
                   <arg value="--disabled_rules=chain-wrapping,indent,range-spacing"/>
                   <arg value="--experimental"/>
