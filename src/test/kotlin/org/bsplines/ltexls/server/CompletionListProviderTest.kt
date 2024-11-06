@@ -12,6 +12,7 @@ import org.eclipse.lsp4j.CompletionList
 import org.eclipse.lsp4j.Position
 import kotlin.test.Test
 import kotlin.test.assertTrue
+import org.bsplines.ltexls.tools.Logging
 
 class CompletionListProviderTest {
   @Test
@@ -26,6 +27,9 @@ class CompletionListProviderTest {
     val completionList: CompletionList =
         languageServer.completionListProvider.createCompletionList(document, Position(0, 14))
 
+    Logging.LOGGER.fine(
+      "completionList.items.size = " + completionList.items.size
+    )
     assertTrue(completionList.items.size >= 10)
     var containsDictionaryWord = false
 
